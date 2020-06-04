@@ -17,11 +17,11 @@ module.exports = app => {
     },
   }));
   app.use(helmet());
-  app.use(cors({
-    origin: ['http://localhost:3000', 'http://localhost:3001', 'https://postgres-graphql-training.herokuapp.com', 'http://postgres-graphql-training.herokuapp.com', 'https://nodejs-todoapp.herokuapp.com', 'http://nodejs-todoapp.herokuapp.com'],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization'],
-  }));
+  // app.use(cors({
+  //   origin: ['http://localhost:3000', 'http://localhost:3001', 'https://postgres-graphql-training.herokuapp.com', 'http://postgres-graphql-training.herokuapp.com', 'https://nodejs-todoapp.herokuapp.com', 'http://nodejs-todoapp.herokuapp.com'],
+  //   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  //   allowedHeaders: ['Content-Type', 'Authorization'],
+  // }));
   app.use(compression());
   app.use(bodyParser.json());
   app.use(app.auth.initialize());
